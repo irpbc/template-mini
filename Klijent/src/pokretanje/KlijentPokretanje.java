@@ -5,12 +5,12 @@
  */
 package pokretanje;
 
-import gui.FrmGlavna;
+import view.MainForm;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
-import static kodovi.Kodovi.*;
-import kontrolerk.KontrolerKL;
+import static net.Codes.*;
+import controller.ClientController;
 
 /**
  *
@@ -20,7 +20,7 @@ public class KlijentPokretanje {
 
 	public static void main(String[] args) throws IOException {
 		
-		FrmGlavna f = new FrmGlavna();
+		MainForm f = new MainForm();
 		f.setVisible(true);
 	}
 }

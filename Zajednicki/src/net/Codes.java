@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package kodovi;
+package net;
 
 /**
  *
  * @author ivan
  */
-public class Kodovi {
+public class Codes {
     
   //port
     public static final int PORT = 11111;

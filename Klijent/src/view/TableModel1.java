@@ -4,13 +4,13 @@
  * and open the template in the editor.
  */
 
-package gui;
+package view;
 
-import domen.Objekat1;
+import model.Objekat1;
 import java.util.List;
 import java.util.UUID;
 import javax.swing.table.DefaultTableModel;
-import kontrolerk.KontrolerKL;
+import controller.ClientController;
 
 /**
  *
@@ -41,7 +41,7 @@ public class TableModel1 extends DefaultTableModel {
 	}
 	
 	public void sacuvaSve() throws Exception {
-		KontrolerKL kontroler = KontrolerKL.getInstance();
+		ClientController kontroler = ClientController.getInstance();
 		kontroler.sacuvajSveObjekat1(lista);
 	}
 	

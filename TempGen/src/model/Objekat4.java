@@ -4,20 +4,23 @@
  * and open the template in the editor.
  */
 
-package domen;
+package model;
 
+import dbobjects.annotations.DbObject;
+import dbobjects.annotations.PrimaryKey;
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  *
  * @author Ivan
  */
-public class Objekat2 implements Serializable {
+@DbObject
+public class Objekat4 implements Serializable {
 	
+	@PrimaryKey
 	private long id;
 
-	public Objekat2() {
+	public Objekat4() {
 	}
 
 	public long getId() {
@@ -27,7 +30,7 @@ public class Objekat2 implements Serializable {
 	public void setId(long id) {
 		this.id = id;
 	}
-	
+
 	
 }
 

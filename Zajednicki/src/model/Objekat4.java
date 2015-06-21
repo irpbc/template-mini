@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 
-package domen;
+package model;
+
 
 import java.io.Serializable;
 
@@ -12,8 +13,9 @@ import java.io.Serializable;
  *
  * @author Ivan
  */
+
 public class Objekat4 implements Serializable {
-	
+
 	private long id;
 
 	public Objekat4() {

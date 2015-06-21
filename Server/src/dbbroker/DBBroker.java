@@ -1,9 +1,9 @@
 package dbbroker;
 
-import domen.Objekat1;
-import domen.Objekat3;
-import domen.Objekat2;
-import domen.Objekat4;
+import model.Objekat1;
+import model.Objekat3;
+import model.Objekat2;
+import model.Objekat4;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,17 +14,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DBBroker {
-	private static DBBroker instance;
+	
 	private Connection konekcija;
 	
-	private DBBroker(){}
-	
-	public static DBBroker getInstance() {
-		if (instance == null)
-			instance = new DBBroker();
-		return instance;
-	}
-
 	public void ucitajDrajver() throws ClassNotFoundException {
 		Class.forName("sun.jdbc.odbc.JdbcOdbcDriver");
 	}

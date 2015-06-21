@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package kontroler;
+package controller;
 
 import dbbroker.DBBroker;
-import domen.Objekat1;
-import domen.Objekat2;
-import domen.Objekat3;
-import domen.Objekat4;
+import model.Objekat1;
+import model.Objekat2;
+import model.Objekat3;
+import model.Objekat4;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
@@ -19,21 +19,9 @@ import java.util.logging.Logger;
  *
  * @author ivan
  */
-public class Kontroler {
+public class ServerController {
 
-	private static Kontroler instance;
-
-	private Kontroler() {
-	}
-
-	public static Kontroler getInstance() {
-		if (instance == null) {
-			instance = new Kontroler();
-		}
-		return instance;
-	}
-	
-	private DBBroker dbb = DBBroker.getInstance();
+	private DBBroker dbb = new DBBroker();
 
 	public List<Objekat2> vratiSveObjekat2() {
 		List<Objekat2> lista = null;
@@ -42,7 +30,7 @@ public class Kontroler {
 			dbb.poveziSaBazom();
 			lista = dbb.vratiSveObjekat2();
 		} catch (ClassNotFoundException | SQLException ex) {
-			Logger.getLogger(Kontroler.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(ServerController.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
 			try {
 				dbb.close();
@@ -60,7 +48,7 @@ public class Kontroler {
 			dbb.poveziSaBazom();
 			lista = dbb.vratiSveObjekat3();
 		} catch (ClassNotFoundException | SQLException ex) {
-			Logger.getLogger(Kontroler.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(ServerController.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
 			try {
 				dbb.close();
@@ -78,7 +66,7 @@ public class Kontroler {
 			dbb.poveziSaBazom();
 			lista = dbb.vratiSveObjekat4();
 		} catch (ClassNotFoundException | SQLException ex) {
-			Logger.getLogger(Kontroler.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(ServerController.class.getName()).log(Level.SEVERE, null, ex);
 		} finally {
 			try {
 				dbb.close();
@@ -96,11 +84,11 @@ public class Kontroler {
 			dbb.sacuvajObjekat1(ob);
 			dbb.commit();
 		} catch (Exception ex) {
-			Logger.getLogger(Kontroler.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(ServerController.class.getName()).log(Level.SEVERE, null, ex);
 			try {
 				dbb.rollback();
 			} catch (SQLException ex1) {
-				Logger.getLogger(Kontroler.class.getName()).log(Level.SEVERE, null, ex1);
+				Logger.getLogger(ServerController.class.getName()).log(Level.SEVERE, null, ex1);
 			}
 			return false;
 		} finally {
@@ -121,11 +109,11 @@ public class Kontroler {
 			dbb.sacuvajSveObjekat1(ob);
 			dbb.commit();
 		} catch (Exception ex) {
-			Logger.getLogger(Kontroler.class.getName()).log(Level.SEVERE, null, ex);
+			Logger.getLogger(ServerController.class.getName()).log(Level.SEVERE, null, ex);
 			try {
 				dbb.rollback();
 			} catch (SQLException ex1) {
-				Logger.getLogger(Kontroler.class.getName()).log(Level.SEVERE, null, ex1);
+				Logger.getLogger(ServerController.class.getName()).log(Level.SEVERE, null, ex1);
 			}
 			return false;
 		} finally {

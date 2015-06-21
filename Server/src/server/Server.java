@@ -8,7 +8,7 @@ package server;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import static kodovi.Kodovi.PORT;
+import static net.Codes.PORT;
 
 /**
  *
@@ -22,7 +22,7 @@ public class Server {
         while(true){
             Socket soket = server.accept();
             System.out.println("Klijent povezan");
-            NitKlijent nit = new NitKlijent(soket);
+            ClientThread nit = new ClientThread(soket);
             nit.start();
         }
 	}
